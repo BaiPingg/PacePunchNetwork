@@ -19,21 +19,30 @@ public class MainMenuPanel : UIPanel
         base.OnOpen(service);
         _createLobbyBtn.onClick.AddListener(CreateLobby);
         _lobbyListsBtn.onClick.AddListener(OpenLobbiesLists);
+        _quitBtn.onClick.AddListener(QuitGame);
     }
+
 
     public override void OnClose()
     {
         base.OnClose();
         _createLobbyBtn.onClick.RemoveAllListeners();
         _lobbyListsBtn.onClick.RemoveAllListeners();
+        _quitBtn.onClick.RemoveAllListeners();
     }
+
     private async void OpenLobbiesLists()
     {
-      await  ServiceLocator.Current.Get<UIService>().OpenPanel("Assets/Prefabs/LobbyListsPanel.prefab");
+        await ServiceLocator.Current.Get<UIService>().OpenPanel("Assets/Prefabs/LobbyListsPanel.prefab");
     }
+
     private void CreateLobby()
     {
-       ServiceLocator.Current.Get<NetService>().StartHost(4);
-      
+        ServiceLocator.Current.Get<NetService>().StartHost(4);
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AddPlayer2PlayerList
+public class PlayerBaseInfo
 {
     public ulong streamId;
     public string steamName;
@@ -11,6 +11,6 @@ public class AddPlayer2PlayerList
 /// </summary>
 [CreateAssetMenu(fileName = "AddPlayerToLobbyPlayerListsEvent", menuName = "ScriptableObjects/AddPlayerToLobbyPlayerListsEvent",
     order = 3)]
-public class AddPlayerToLobbyPlayerListsEvent : GameEvent<AddPlayer2PlayerList>
+public class AddPlayerToLobbyPlayerListsEvent : GameEvent<PlayerBaseInfo>
 {
 }

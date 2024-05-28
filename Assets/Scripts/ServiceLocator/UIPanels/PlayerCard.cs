@@ -12,11 +12,12 @@ public class PlayerCard : MonoBehaviour
     [SerializeField] private TMP_Text _name;
     [SerializeField] private GameObject _ready;
     [SerializeField] private Image _icon;
+    public bool ready;
     public string steamName;
     public ulong steamId;
     public ulong cilentId;
 
-    public async void Init(AddPlayer2PlayerList friend)
+    public async void Init(PlayerBaseInfo friend)
     {
         steamId = friend.streamId;
         steamName = friend.steamName;
@@ -28,6 +29,7 @@ public class PlayerCard : MonoBehaviour
             _icon.sprite = _defaultImage;
 
         _icon.sprite = MakeTextureFromRGBA(image.Value.Data, image.Value.Width, image.Value.Height);
+        SetReady(false);
     }
 
     private Sprite MakeTextureFromRGBA(byte[] valueData, uint valueWidth, uint valueHeight)
@@ -38,5 +40,10 @@ public class PlayerCard : MonoBehaviour
         tex.Apply();
         return Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height)
             , new Vector2(0.5f, 0.5f), 100.0f);
+    }
+
+    public void SetReady(bool ready)
+    {
+        _ready.gameObject.SetActive(ready);
     }
 }

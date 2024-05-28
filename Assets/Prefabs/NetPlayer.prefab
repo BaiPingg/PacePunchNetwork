@@ -69,3 +69,8 @@ MonoBehaviour:
   _addPlayerToLobbyPlayerListsEvent: {fileID: 11400000, guid: 81a57ef448e58e743b5b14353e1f9622,
     type: 2}
   _lobbyChatEvent: {fileID: 11400000, guid: 89fa0a378b6cc544c95da1433fe12c84, type: 2}
+  _updateClientEvent: {fileID: 11400000, guid: cf93ae844c9ae474999eb6cfda27dff9, type: 2}
+  _removePlayerToLobbyPlayerListsEvent: {fileID: 11400000, guid: 4b5b30943861f3c4a9b1d2404c10b135,
+    type: 2}
+  _lobbyMemberReadySetEvent: {fileID: 11400000, guid: 032e8b07e7d564f4b90978342ab07559,
+    type: 2}
