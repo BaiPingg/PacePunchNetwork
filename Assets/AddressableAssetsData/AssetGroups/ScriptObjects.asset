@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ScriptObjects
+  m_EditorClassIdentifier: 
+  m_GroupName: ScriptObjects
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 11b0fa3e126790341862e946584aff19
+  m_SerializeEntries:
+  - m_GUID: 9326d411534a78e49881f351799a2203
+    m_Address: Assets/ScriptObjects/GameProcedure/Close Panl Action.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39bffde57f866794aa5d20947fa8307f
+    m_Address: Assets/ScriptObjects/GameProcedure/MainMenuLogAction.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c9ff4762f46ba444a3b2b021b7135be
+    m_Address: Assets/ScriptObjects/GameProcedure/MainMenuState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 915b6e4056bd40a42bdc8dcfe1c87ed3
+    m_Address: Assets/ScriptObjects/GameProcedure/OpenMainMenuPanel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48aacf41434e64a41a6cd48dc23d4ed5
+    m_Address: Assets/ScriptObjects/GameProcedure/StartLogAction.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ed0efe93a0b0a44826760847feaceb
+    m_Address: Assets/ScriptObjects/GameProcedure/StartState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3aee24f0238481f43a932a8d2b8c409c
+    m_Address: Assets/ScriptObjects/GameStartEvent.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e2a3f8244158154b87c37e827f50bfa
+    m_Address: Assets/ScriptObjects/LoadArchiveFinishedEvent.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71cfc818e096b124ab18a09ce030118d
+    m_Address: Assets/ScriptObjects/GameProcedure/Start State Action.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81a57ef448e58e743b5b14353e1f9622
+    m_Address: Assets/ScriptObjects/AddPlayerToLobbyPlayerListsEvent.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89fa0a378b6cc544c95da1433fe12c84
+    m_Address: Assets/ScriptObjects/LobbyChatEvent.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 29231216d01966d409913ad6717d539e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7919690d37b83cd42accfc2081035f24, type: 2}
+    - {fileID: 11400000, guid: cbf02a24750c7fc4dbc18bca94d73619, type: 2}

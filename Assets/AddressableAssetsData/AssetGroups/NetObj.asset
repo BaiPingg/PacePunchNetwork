@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: NetObj
+  m_EditorClassIdentifier: 
+  m_GroupName: NetObj
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f42173ad1fb76934c8800f8af9d5751c
+  m_SerializeEntries:
+  - m_GUID: c7d3fc7d3670d6246ba273ca10c40c2b
+    m_Address: Assets/Prefabs/NetPlayer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 29231216d01966d409913ad6717d539e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 454f5448d03dea24a8eb98063045decd, type: 2}
+    - {fileID: 11400000, guid: 5fe035b67f7a4a946a696c8dba40974a, type: 2}

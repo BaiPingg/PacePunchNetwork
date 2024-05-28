@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad730f4bbca43189b0510c086771248, type: 3}
+  m_Name: OpenMainMenuPanel
+  m_EditorClassIdentifier: 
+  target: {fileID: 3478066887296203169, guid: 55fcca820359e4349949e2f26e4b8735, type: 3}
