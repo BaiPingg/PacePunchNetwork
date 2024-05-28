@@ -130,7 +130,7 @@ public class NetService : MonoBehaviour, IService
         NetworkManager.Singleton.OnClientConnectedCallback += Singleton_OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += Singleton_OnClientDisconnectCallback;
         transport.targetSteamId = _steamId;
-
+        
         if (NetworkManager.Singleton.StartClient())
         {
             Debug.Log("Client has Started");
