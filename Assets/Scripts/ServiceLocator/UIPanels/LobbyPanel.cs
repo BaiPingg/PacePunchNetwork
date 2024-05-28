@@ -67,7 +67,7 @@ public class LobbyPanel : UIPanel
         if (_currentPlayer != null)
         {
             var player = NetworkManager.Singleton.LocalClient.PlayerObject.GetComponent<NetPlayer>();
-            player.RequestSetMemberIsReadyServerRpc(NetworkManager.Singleton.LocalClientId, true);
+            player.RequestSetMemberIsReadyServerRpc(NetworkManager.Singleton.LocalClientId, !_currentPlayer.ready);
         }
     }
 
