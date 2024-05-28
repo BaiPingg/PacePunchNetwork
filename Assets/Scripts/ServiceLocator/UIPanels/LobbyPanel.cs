@@ -88,6 +88,11 @@ public class LobbyPanel : UIPanel
 
     public void OnAddPlayerToPlayerLists(PlayerBaseInfo playerInfo)
     {
+        if (_PlayerCards.ContainsKey(playerInfo.clientId))
+        {
+            return;
+        }
+
         var card = Instantiate(_playerCardTemplate.gameObject, _playerListContent.transform)
             .GetComponent<PlayerCard>();
         card.Init(playerInfo);
