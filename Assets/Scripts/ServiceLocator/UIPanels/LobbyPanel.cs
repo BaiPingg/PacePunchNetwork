@@ -64,11 +64,10 @@ public class LobbyPanel : UIPanel
 
     private void SetPlayerReady()
     {
-        if (currentLobby != null)
+        if (_currentPlayer != null)
         {
-            NetworkManager.Singleton.LocalClient.PlayerObject.GetComponent<NetPlayer>()
-                .RequestSetMemberIsReadyServerRpc(NetworkManager.Singleton.LocalClientId,
-                    !_currentPlayer.ready);
+            var player = NetworkManager.Singleton.LocalClient.PlayerObject.GetComponent<NetPlayer>();
+            player.RequestSetMemberIsReadyServerRpc(NetworkManager.Singleton.LocalClientId, true);
         }
     }
 
