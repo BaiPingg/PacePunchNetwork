@@ -44,6 +44,7 @@ public class PlayerCard : MonoBehaviour
 
     public void SetReady(bool ready)
     {
+        this.ready = ready;
         _ready.gameObject.SetActive(ready);
     }
 }
