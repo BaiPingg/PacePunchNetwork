@@ -88,11 +88,6 @@ public class LobbyPanel : UIPanel
 
     public void OnAddPlayerToPlayerLists(PlayerBaseInfo playerInfo)
     {
-        if (_PlayerCards.ContainsKey(playerInfo.clientId))
-        {
-            return;
-        }
-
         var card = Instantiate(_playerCardTemplate.gameObject, _playerListContent.transform)
             .GetComponent<PlayerCard>();
         card.Init(playerInfo);
@@ -127,8 +122,8 @@ public class LobbyPanel : UIPanel
             string _steamName = player.Value.steamName;
             ulong _clientId = player.Key;
             NetworkManager.Singleton.LocalClient.PlayerObject.GetComponent<NetPlayer>()
-                .UpdateClientsPlayerInfoClientRPC(SteamClient.SteamId, SteamClient.Name,
-                    NetworkManager.Singleton.LocalClientId);
+                .UpdateClientsPlayerInfoClientRPC(_steamId, _steamName,
+                    _clientId);
         }
     }
 
