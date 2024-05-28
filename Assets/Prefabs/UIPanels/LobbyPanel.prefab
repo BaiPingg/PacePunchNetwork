@@ -1247,6 +1247,7 @@ GameObject:
   - component: {fileID: 1944584243549667087}
   - component: {fileID: 7374220094933133640}
   - component: {fileID: 4136245016382859083}
+  - component: {fileID: 4405497207186868675}
   m_Layer: 5
   m_Name: LobbyPanel
   m_TagString: Untagged
@@ -1424,6 +1425,34 @@ MonoBehaviour:
       - m_Target: {fileID: 7324747110452224754}
         m_TargetAssemblyTypeName: LobbyPanel, Assembly-CSharp
         m_MethodName: OnRemoveFormPlayerLists
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4405497207186868675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655734438453639134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e57b8c2ad94ab3b2bf97795ed11bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 032e8b07e7d564f4b90978342ab07559, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7324747110452224754}
+        m_TargetAssemblyTypeName: LobbyPanel, Assembly-CSharp
+        m_MethodName: OnsetPlayerReadyState
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2545,6 +2574,7 @@ MonoBehaviour:
   _name: {fileID: 4250849012554141875}
   _ready: {fileID: 601435507620286218}
   _icon: {fileID: 4471046974427365285}
+  ready: 0
   steamName: 
   steamId: 0
   cilentId: 0
