@@ -16,7 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ba135c5c6ed8c814887f652467e4f960
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 247103c4e8895ec4389ac1ed1e05035d
+    m_Address: Assets/Scenes/MenuSceneSteam.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99c9720ab356a0642a771bea13969a05
+    m_Address: Assets/Scenes/SteamGameScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4efa93c9c550df2459024ba74d7e5a60, type: 2}
   m_SchemaSet:

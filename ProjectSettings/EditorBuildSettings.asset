@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bootstrap.unity
     guid: 179126cbbbb87ee4cb202db698035bb2
-  - enabled: 1
-    path: Assets/Scenes/MenuSceneSteam.unity
-    guid: 247103c4e8895ec4389ac1ed1e05035d
-  - enabled: 1
-    path: Assets/Scenes/SteamGameScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4551c9c56e20d574d955bf8743da8c33,
       type: 2}

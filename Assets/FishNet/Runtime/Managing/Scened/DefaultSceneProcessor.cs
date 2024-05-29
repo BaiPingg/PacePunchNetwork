@@ -11,6 +11,7 @@ namespace FishNet.Managing.Scened
     public class DefaultSceneProcessor : SceneProcessorBase
     {
         #region Private.
+        
         /// <summary>
         /// Currently active loading AsyncOperations.
         /// </summary>
@@ -65,6 +66,7 @@ namespace FishNet.Managing.Scened
         /// <param name="sceneName">Scene name to load.</param>
         public override void BeginLoadAsync(string sceneName, UnityEngine.SceneManagement.LoadSceneParameters parameters)
         {
+            
             AsyncOperation ao = UnitySceneManager.LoadSceneAsync(sceneName, parameters);
             LoadingAsyncOperations.Add(ao);
             
