@@ -86,20 +86,25 @@ public class NetAddressable : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void LoadAddressPackage(string package)
+    public void AcknowledgeLoadFinish()
     {
-        Debug.Log($"start load addressable package {package}");
-        StartCoroutine(LoadAddressables(package,
-            (packageName, ObjectId) => { AcknowledgeLoadFinish(packageName, ObjectId); }));
+        Debug.Log($"load addressable package finish");
     }
 
     [ObserversRpc]
-    public void AcknowledgeLoadFinish(string package, ushort ObjectId)
+    public void LoadAddressPackage(string package)
     {
-        SinglePrefabObjects spawnablePrefabs =
-            (SinglePrefabObjects)_networkManager.GetPrefabObjects<SinglePrefabObjects>(ObjectId, true);
-        Debug.Log($"load addressable package finish {spawnablePrefabs.Prefabs.Count}");
-        var prefab = Instantiate(spawnablePrefabs.Prefabs[0].gameObject);
-        InstanceFinder.ServerManager.Spawn(prefab, LocalConnection);
+        Debug.Log($"start load addressable package {package}");
+
+        StartCoroutine(LoadAddressables(package,
+            (packageName, ObjectId) =>
+            {
+                SinglePrefabObjects spawnablePrefabs =
+                    (SinglePrefabObjects)_networkManager.GetPrefabObjects<SinglePrefabObjects>(ObjectId, true);
+
+                var prefab = Instantiate(spawnablePrefabs.Prefabs[0].gameObject);
+                InstanceFinder.ServerManager.Spawn(prefab, LocalConnection);
+                AcknowledgeLoadFinish();
+            }));
     }
 }
