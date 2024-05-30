@@ -103,7 +103,7 @@ public class NetAddressable : NetworkBehaviour
                     (SinglePrefabObjects)_networkManager.GetPrefabObjects<SinglePrefabObjects>(ObjectId, true);
 
                 var prefab = Instantiate(spawnablePrefabs.Prefabs[0].gameObject);
-                InstanceFinder.ServerManager.Spawn(prefab, LocalConnection);
+                InstanceFinder.ServerManager.Spawn(prefab);
                 AcknowledgeLoadFinish();
             }));
     }
