@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FishNet;
+using FishNet.Connection;
 using FishNet.Managing;
 using FishNet.Managing.Object;
 using FishNet.Object;
@@ -89,11 +90,8 @@ public class NetAddressable : NetworkBehaviour
     public void AcknowledgeLoadFinish(ushort ObjectId)
     {
         Debug.Log($"load addressable package finish");
-        SinglePrefabObjects spawnablePrefabs =
-            (SinglePrefabObjects)_networkManager.GetPrefabObjects<SinglePrefabObjects>(ObjectId, true);
-        var prefab = Instantiate(spawnablePrefabs.Prefabs[0].gameObject);
-        InstanceFinder.ServerManager.Spawn(prefab);
     }
+
 
     [ObserversRpc]
     public void LoadAddressPackage(string package)
@@ -102,5 +100,15 @@ public class NetAddressable : NetworkBehaviour
 
         StartCoroutine(LoadAddressables(package,
             (packageName, ObjectId) => { AcknowledgeLoadFinish(ObjectId); }));
+    }
+
+   
+    public static void InstantiatePrefab(string path, NetworkConnection connection)
+    {
+        ushort id = path.GetStableHashU16();
+        SinglePrefabObjects spawnablePrefabs =
+            (SinglePrefabObjects)InstanceFinder.NetworkManager.GetPrefabObjects<SinglePrefabObjects>(id, true);
+        var preabs = Instantiate(spawnablePrefabs.Prefabs[0]);
+        InstanceFinder.ServerManager.Spawn(preabs, connection);
     }
 }

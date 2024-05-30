@@ -16,11 +16,12 @@ public class BootstrapNetworkManager : NetworkBehaviour
     public static void ChangeNetworkScene(string sceneName, string[] scenesToClose)
     {
         instance.CloseScenes(scenesToClose);
-
+        
+        instance.netAddressable.LoadAddressPackage("Assets/Prefabs/PlayerArmature.prefab");
         SceneLoadData sld = new SceneLoadData(sceneName);
         NetworkConnection[] conns = instance.ServerManager.Clients.Values.ToArray();
         instance.SceneManager.LoadConnectionScenes(conns, sld);
-        instance.netAddressable.LoadAddressPackage("Assets/Prefabs/PlayerArmature.prefab");
+      
     }
 
 
