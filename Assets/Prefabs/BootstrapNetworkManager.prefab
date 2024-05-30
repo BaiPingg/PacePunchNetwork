@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662199170411172658}
   - component: {fileID: 3263134539685346347}
+  - component: {fileID: 7029472774733156547}
   - component: {fileID: 5753905259720817555}
   m_Layer: 0
   m_Name: BootstrapNetworkManager
@@ -48,6 +49,19 @@ MonoBehaviour:
   _componentIndexCache: 0
   _addedNetworkObject: {fileID: 5753905259720817555}
   _networkObjectCache: {fileID: 5753905259720817555}
+  netAddressable: {fileID: 7029472774733156547}
+--- !u!114 &7029472774733156547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378176906767061970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8417ca433af0c474390a09004f7c6e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5753905259720817555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +106,6 @@ MonoBehaviour:
   _teleportThreshold: 1
   <PrefabId>k__BackingField: 0
   <SpawnableCollectionId>k__BackingField: 0
-  _scenePathHash: 2827840440
+  _scenePathHash: 0
   <SceneId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 10359517563351760115

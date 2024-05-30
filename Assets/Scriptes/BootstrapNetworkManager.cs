@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
+using FishNet;
 using FishNet.Connection;
 using FishNet.Managing.Scened;
 using FishNet.Object;
@@ -6,20 +8,21 @@ using UnityEngine;
 
 public class BootstrapNetworkManager : NetworkBehaviour
 {
+    [SerializeField] public NetAddressable netAddressable;
     private static BootstrapNetworkManager instance;
     private void Awake() => instance = this;
 
-   
 
     public static void ChangeNetworkScene(string sceneName, string[] scenesToClose)
     {
-      
         instance.CloseScenes(scenesToClose);
 
         SceneLoadData sld = new SceneLoadData(sceneName);
         NetworkConnection[] conns = instance.ServerManager.Clients.Values.ToArray();
         instance.SceneManager.LoadConnectionScenes(conns, sld);
+        instance.netAddressable.LoadAddressPackage("Assets/Prefabs/PlayerArmature.prefab");
     }
+
 
     [ServerRpc(RequireOwnership = false)]
     void CloseScenes(string[] scenesToClose)
