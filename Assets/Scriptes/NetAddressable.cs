@@ -13,6 +13,13 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class NetAddressable : NetworkBehaviour
 {
+    public static NetAddressable instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     /// <summary>
     /// Reference to your NetworkManager.
     /// </summary>
@@ -102,8 +109,8 @@ public class NetAddressable : NetworkBehaviour
             (packageName, ObjectId) => { AcknowledgeLoadFinish(ObjectId); }));
     }
 
-   
-    public static void InstantiatePrefab(string path, NetworkConnection connection)
+    [ServerRpc(RequireOwnership = false)]
+    public void InstantiatePrefab(string path, NetworkConnection connection = null)
     {
         ushort id = path.GetStableHashU16();
         SinglePrefabObjects spawnablePrefabs =
