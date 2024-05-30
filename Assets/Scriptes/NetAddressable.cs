@@ -99,6 +99,7 @@ public class NetAddressable : NetworkBehaviour
         SinglePrefabObjects spawnablePrefabs =
             (SinglePrefabObjects)_networkManager.GetPrefabObjects<SinglePrefabObjects>(ObjectId, true);
         Debug.Log($"load addressable package finish {spawnablePrefabs.Prefabs.Count}");
-       
+        var prefab = Instantiate(spawnablePrefabs.Prefabs[0].gameObject);
+        InstanceFinder.ServerManager.Spawn(prefab, LocalConnection);
     }
 }

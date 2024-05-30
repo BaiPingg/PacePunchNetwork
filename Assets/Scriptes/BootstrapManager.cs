@@ -48,7 +48,7 @@ public class BootstrapManager : MonoBehaviour
             SteamFriends.GetPersonaName().ToString() + "'s lobby");
         _fishySteamworks.SetClientAddress(SteamUser.GetSteamID().ToString());
         _fishySteamworks.StartConnection(true);
-        Debug.Log("Lobby creation was successful");
+        Debug.Log($"Lobby creation was successful {CurrentLobbyID}");
     }
 
     private void OnJoinRequest(GameLobbyJoinRequested_t callback)
