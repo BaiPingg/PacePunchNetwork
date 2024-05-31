@@ -2,6 +2,7 @@ using System;
 using Steamworks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
  
 public class MainMenuManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
     private static MainMenuManager instance;
  
     [SerializeField] private GameObject menuScreen, lobbyScreen;
+    [SerializeField] private Button menuScreenFirstSelect, lobbyScreenFirstSelect;
     [SerializeField] private TMP_InputField lobbyInput;
  
     [SerializeField] private TextMeshProUGUI lobbyTitle, lobbyIDText;
@@ -29,12 +31,14 @@ public class MainMenuManager : MonoBehaviour
     {
         CloseAllScreens();
         menuScreen.SetActive(true);
+        menuScreenFirstSelect.Select();
     }
  
     public void OpenLobby()
     {
         CloseAllScreens();
         lobbyScreen.SetActive(true);
+        lobbyScreenFirstSelect.Select();
     }
  
     public static void LobbyEntered(string lobbyName, bool isHost)

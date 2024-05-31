@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 950551481935079360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00840494, y: 0.9199997, z: 1.4418212}
+  m_LocalPosition: {x: 0.00840494, y: 0.9199997, z: 1.441821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -205,7 +205,7 @@ MonoBehaviour:
   <SerializedRootNetworkBehaviour>k__BackingField: {fileID: 0}
   <NestedRootNetworkBehaviours>k__BackingField: []
   SerializedTransformProperties:
-    Position: {x: 0.00840494, y: 0.9199997, z: 1.4418212}
+    Position: {x: 0.00840494, y: 0.9199997, z: 1.441821}
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
@@ -652,7 +652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891404180273909909}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04363495, y: -0.7343887, z: 0.047427546, w: 0.6756625}
+  m_LocalRotation: {x: 0.043634962, y: -0.7343886, z: 0.04742754, w: 0.67566264}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -950,7 +950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8265449705713208285}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.031353153, y: -0.7351139, z: 0.034076713, w: 0.67636037}
+  m_LocalRotation: {x: 0.031337783, y: -0.7351299, z: 0.034061555, w: 0.67634445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1029,7 +1029,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8687045979881543620}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019078918, y: -0.73561543, z: 0.02073652, w: 0.67681307}
+  m_LocalRotation: {x: 0.019062748, y: -0.7356268, z: 0.020719614, w: 0.6768017}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1154,6 +1154,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 969603115175823007}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c5137d2acc39ce4aaf050bf055f01ac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8992253609022448392}
   m_SourcePrefab: {fileID: 100100000, guid: 5c5137d2acc39ce4aaf050bf055f01ac, type: 3}
 --- !u!1 &4862587695903971324 stripped
 GameObject:
@@ -1182,6 +1186,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8992253609022448392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862587695903971324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 2251606659145420854}
+  _networkObjectCache: {fileID: 0}
+  _componentConfiguration: 0
+  _synchronizeParent: 0
+  _packing:
+    Position: 1
+    Rotation: 1
+    Scale: 0
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  _scaleThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _enableNetworkLod: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!4 &5201852267279076678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c5137d2acc39ce4aaf050bf055f01ac,
