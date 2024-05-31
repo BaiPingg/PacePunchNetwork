@@ -51,6 +51,10 @@ public class PlayerStateMachine : NetworkBehaviour
             cinemachineFreeLook.LookAt = cinemachineCameraTarget.transform;
             SwitchState(new PlayerMoveState(this));
         }
+        else
+        {
+            cinemachineFreeLook.gameObject.SetActive(false);
+        }
     }
 
    
