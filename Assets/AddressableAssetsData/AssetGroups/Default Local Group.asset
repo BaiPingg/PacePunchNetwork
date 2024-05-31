@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9017d5f96b9f09489b4b37e1d6eb914
-    m_Address: Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
+    m_Address: Assets/Scenes/SteamGameScene.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

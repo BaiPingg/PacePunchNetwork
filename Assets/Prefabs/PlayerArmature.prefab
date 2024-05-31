@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.276609, z: -5.9875975}
+  m_FollowOffset: {x: 0, y: 3.8744226, z: -5.5913067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -174,14 +174,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950551481935079360}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2287235ae0e1e844fbd0ee5ec3f16edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 0
-  _addedNetworkObject: {fileID: 2251606659145420854}
-  _networkObjectCache: {fileID: 2251606659145420854}
   MouseDelta: {x: 0, y: 0}
   MoveComposite: {x: 0, y: 0}
 --- !u!114 &2251606659145420854
@@ -200,8 +197,9 @@ MonoBehaviour:
   <ComponentIndex>k__BackingField: 0
   <PredictedSpawn>k__BackingField: {fileID: 0}
   _networkBehaviours:
-  - {fileID: 6698678007811410001}
   - {fileID: 6574250135038780956}
+  - {fileID: 7174853032249582333}
+  - {fileID: 8881942015716736594}
   <SerializedRootNetworkBehaviour>k__BackingField: {fileID: 0}
   <NestedRootNetworkBehaviours>k__BackingField: []
   SerializedTransformProperties:
@@ -244,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 1
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 2251606659145420854}
   _networkObjectCache: {fileID: 2251606659145420854}
   _componentConfiguration: 0
@@ -327,6 +325,46 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1d99c77e-2937-4ac9-aaef-30c401a85a27
     m_ActionName: Player/Look[/Mouse/delta,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bdd3f9cc-0df7-45f8-9398-a7990e230fe3
+    m_ActionName: UI/Navigate[/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/rightStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/rightStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/rightStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/rightStick/right,/DualShock4GamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12ad6246-2f6f-4fc5-95d1-b524f7816fe0
+    m_ActionName: UI/Submit[/Keyboard/enter,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff4ae931-17c0-457c-8dd8-26e2e8de8ba2
+    m_ActionName: UI/Cancel[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 04e438e0-9999-4fa9-a800-8f145232a531
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae092fc9-1d2f-4e56-a393-6df6436c9ebf
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 65f2907c-f6c3-40ff-b804-d29b7b930946
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f17a514d-3aa2-446f-bfa4-0b8a19ac476b
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dadf40e2-c5c2-4dd2-b60d-f022ff5b6578
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd913a66-fefa-4e23-a1f0-da65e4bfc9a4
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43707bcd-eb94-4965-90e3-2225aff51daa
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -370,9 +408,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654e18814b2445b6bec0e70b70e8caf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 1
+  _addedNetworkObject: {fileID: 2251606659145420854}
+  _networkObjectCache: {fileID: 2251606659145420854}
   velocity: {x: 0, y: 0, z: 0}
   moveSpeed: 3
   jumpForce: 5
+  animator: {fileID: 1566007589535755372}
+  cinemachineCameraTarget: {fileID: 7537436472423144604}
 --- !u!1 &1250508301148446964
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.276609, z: -5.9875975}
+  m_FollowOffset: {x: 0, y: 3.8744226, z: -5.5913067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -559,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.276609, z: -5.9875975}
+  m_FollowOffset: {x: 0, y: 3.8744226, z: -5.5913067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -652,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891404180273909909}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043634962, y: -0.7343886, z: 0.04742754, w: 0.67566264}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -734,7 +777,7 @@ Transform:
   m_GameObject: {fileID: 5020679733236700309}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9668617, y: 2.276609, z: 0.49788177}
+  m_LocalPosition: {x: 3.5055876, y: 0.5294744, z: -3.6160016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -761,8 +804,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 4374485437327303217}
-  m_Follow: {fileID: 2172490478099778497}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -783,13 +826,13 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.4566827
+    Value: 0.7786096
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0.09757142
+    m_InputAxisValue: 0
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -950,7 +993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8265449705713208285}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.031337783, y: -0.7351299, z: 0.034061555, w: 0.67634445}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1029,7 +1072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8687045979881543620}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019062748, y: -0.7356268, z: 0.020719614, w: 0.6768017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1153,11 +1196,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c5137d2acc39ce4aaf050bf055f01ac,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 969603115175823007}
+      addedObject: {fileID: 1566007589535755372}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c5137d2acc39ce4aaf050bf055f01ac,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8992253609022448392}
+      addedObject: {fileID: 8881942015716736594}
   m_SourcePrefab: {fileID: 100100000, guid: 5c5137d2acc39ce4aaf050bf055f01ac, type: 3}
 --- !u!1 &4862587695903971324 stripped
 GameObject:
@@ -1165,7 +1208,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5744913547155450541}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &969603115175823007
+--- !u!95 &1566007589535755372
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -1186,7 +1229,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8992253609022448392
+--- !u!114 &8881942015716736594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1195,42 +1238,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4862587695903971324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 2
   _addedNetworkObject: {fileID: 2251606659145420854}
-  _networkObjectCache: {fileID: 0}
-  _componentConfiguration: 0
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
+  _networkObjectCache: {fileID: 2251606659145420854}
+  IgnoredParameters: []
+  _animator: {fileID: 1566007589535755372}
+  _synchronizeWhenDisabled: 0
+  _smoothFloats: 1
   _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _scaleThreshold: 1
   _clientAuthoritative: 1
-  _sendToOwner: 1
-  _enableNetworkLod: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  _sendToOwner: 0
 --- !u!4 &5201852267279076678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c5137d2acc39ce4aaf050bf055f01ac,
