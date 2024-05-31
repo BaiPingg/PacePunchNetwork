@@ -15,7 +15,7 @@ public class PlayerStateMachine : NetworkBehaviour
     public Animator animator;
     public CharacterController controller { get; private set; }
     public GameObject cinemachineCameraTarget;
-    public CinemachineFreeLook cinemachineFreeLook { get; private set; }
+    public CinemachineFreeLook cinemachineFreeLook;
 
     private void Awake()
     {
@@ -39,14 +39,14 @@ public class PlayerStateMachine : NetworkBehaviour
     {
         base.OnStartClient();
 
-   
+
         controller.enabled = (base.IsServer || base.IsOwner);
         if (IsOwner)
         {
             mainCamera = Camera.main.transform;
             inputReader = GetComponent<InputReader>();
             inputReader.enabled = true;
-            cinemachineFreeLook = transform.GetComponentInChildren<CinemachineFreeLook>();
+            cinemachineFreeLook.gameObject.SetActive(true);
             cinemachineFreeLook.Follow = transform;
             cinemachineFreeLook.LookAt = cinemachineCameraTarget.transform;
             SwitchState(new PlayerMoveState(this));
@@ -57,7 +57,6 @@ public class PlayerStateMachine : NetworkBehaviour
         }
     }
 
-   
 
     private void TimeManager_OnUpdate()
     {
@@ -81,8 +80,6 @@ public class PlayerStateMachine : NetworkBehaviour
         _currentState = state;
         _currentState.Enter();
     }
-
-   
 
     #endregion
 }
