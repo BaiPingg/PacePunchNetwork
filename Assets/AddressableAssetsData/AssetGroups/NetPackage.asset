@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 64dce48905ffd9b4293e595fa6941544
-    m_Address: Assets/Prefabs/PlayerAaa.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4efa93c9c550df2459024ba74d7e5a60, type: 2}
   m_SchemaSet:
