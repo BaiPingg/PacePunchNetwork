@@ -1,5 +1,6 @@
 ﻿using System;
 using FishNet.Managing;
+using FishNet.Transporting;
 using Steamworks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -24,6 +25,28 @@ public class LobbyService : MonoBehaviour, IService
         JoinRequest = Callback<GameLobbyJoinRequested_t>.Create(OnJoinRequest);
         LobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
         LobbyChatUpdate = new Callback<LobbyChatUpdate_t>(OnLobbyChatUpdate);
+    }
+
+    private void OnEnable()
+    {
+        _fishySteamworks.OnClientConnectionState += OnOnClientConnectionState;
+    }
+
+    private void OnOnClientConnectionState(ClientConnectionStateArgs obj)
+    {
+        Debug.Log(obj.ConnectionState);
+        if (obj.ConnectionState == LocalConnectionState.Started)
+        {
+            Addressables.InstantiateAsync(nameof(LobbyPanel)).Completed += handle =>
+            {
+                SL.Get<UIService>().OpenPanel(handle.Result.GetComponent<UIPanel>());
+            };
+        }
+    }
+
+    private void OnDisable()
+    {
+        _fishySteamworks.OnClientConnectionState -= OnOnClientConnectionState;
     }
 
     private void OnLobbyChatUpdate(LobbyChatUpdate_t arg)
@@ -68,13 +91,10 @@ public class LobbyService : MonoBehaviour, IService
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
         CurrentLobbyID = callback.m_ulSteamIDLobby;
+        SteamMatchmaking.SetLobbyMemberData(new CSteamID(CurrentLobbyID), "Ready", "false");
         _fishySteamworks.SetClientAddress(
             SteamMatchmaking.GetLobbyData(new CSteamID(CurrentLobbyID), "HostAddress"));
         _fishySteamworks.StartConnection(false);
-        Addressables.InstantiateAsync(nameof(LobbyPanel)).Completed += handle =>
-        {
-            SL.Get<UIService>().OpenPanel(handle.Result.GetComponent<UIPanel>());
-        };
     }
 
     public void FindLobbies()
@@ -110,5 +130,24 @@ public class LobbyService : MonoBehaviour, IService
         _fishySteamworks.StopConnection(false);
         if (_networkManager.IsServerStarted)
             _fishySteamworks.StopConnection(true);
+    }
+
+    public bool IsAllMemberReady()
+    {
+        bool allReady = true;
+        var lobby = new CSteamID(CurrentLobbyID);
+        var members = SteamMatchmaking.GetNumLobbyMembers(lobby);
+        for (int i = 0; i < members; i++)
+        {
+            var member = SteamMatchmaking.GetLobbyMemberByIndex(lobby, i);
+            var data = SteamMatchmaking.GetLobbyMemberData(lobby, member, "Ready");
+            if (bool.TryParse(data, out bool ready))
+            {
+                if (!ready)
+                    allReady = false;
+            }
+        }
+
+        return allReady;
     }
 }

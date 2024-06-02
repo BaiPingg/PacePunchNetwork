@@ -2426,9 +2426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultImage: {fileID: 0}
-  _name: {fileID: 0}
-  _ready: {fileID: 0}
-  _icon: {fileID: 0}
+  _name: {fileID: 4250849012554141875}
+  _ready: {fileID: 601435507620286218}
+  _icon: {fileID: 4471046974427365285}
   ready: 0
   steamName: 
   steamId: 0

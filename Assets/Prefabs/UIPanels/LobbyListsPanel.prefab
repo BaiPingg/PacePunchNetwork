@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7f0debb18d40c4a811a184a7c06aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 5112949806166142545}
   _backBtn: {fileID: 8385274474155981245}
   _joinBtn: {fileID: 3571500923935505106}
   _refreshBtn: {fileID: 3905287177712755400}

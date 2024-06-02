@@ -17,15 +17,96 @@ public class LobbyPanel : UIPanel
     public Dictionary<ulong, PlayerCard> _PlayerCards = new Dictionary<ulong, PlayerCard>();
     private PlayerCard _currentPlayer;
     public List<ChatMessage> _ChatMessages = new List<ChatMessage>();
+    protected Callback<LobbyDataUpdate_t> LobbyDataUpdate;
+    protected Callback<LobbyChatUpdate_t> LobbyChatUpdate;
 
     public override void OnOpen(UIService service)
     {
         base.OnOpen(service);
-
-        _StartBtn.gameObject.SetActive(SL.Get<LobbyService>().IsOwner());
+        LobbyDataUpdate = Callback<LobbyDataUpdate_t>.Create(OnLobbyDataUpdate);
+        LobbyChatUpdate = Callback<LobbyChatUpdate_t>.Create(OnLobbyChatUpdate);
+        _StartBtn.gameObject.SetActive(false);
         _backBtn.onClick.AddListener(OnBackBtnClick);
         _ReadyBtn.onClick.AddListener(SetPlayerReady);
         _StartBtn.onClick.AddListener(RequestStartGame);
+        InitMember();
+    }
+
+    private void OnLobbyChatUpdate(LobbyChatUpdate_t arg)
+    {
+        if (arg.m_ulSteamIDLobby == SL.Get<LobbyService>().CurrentLobbyID)
+        {
+            var state = (EChatMemberStateChange)arg.m_rgfChatMemberStateChange;
+            if (state == EChatMemberStateChange.k_EChatMemberStateChangeEntered)
+            {
+                Debug.Log($"{arg.m_ulSteamIDUserChanged} joined");
+                AddMember(arg.m_ulSteamIDLobby, arg.m_ulSteamIDUserChanged);
+            }
+            else
+            {
+                RemoveMember(arg.m_ulSteamIDLobby, arg.m_ulSteamIDUserChanged);
+                Debug.Log($"{arg.m_ulSteamIDUserChanged} left");
+            }
+        }
+    }
+
+    private void RemoveMember(ulong argMUlSteamIDLobby, ulong argMUlSteamIDUserChanged)
+    {
+        if (_PlayerCards.ContainsKey(argMUlSteamIDUserChanged))
+        {
+            var target = _PlayerCards[argMUlSteamIDUserChanged];
+            _PlayerCards.Remove(argMUlSteamIDUserChanged);
+            Destroy(target);
+        }
+    }
+
+    private void AddMember(ulong argMUlSteamIDLobby, ulong argMUlSteamIDUserChanged)
+    {
+        var card = Instantiate(_playerCardTemplate.gameObject, _playerListContent.transform)
+            .GetComponent<PlayerCard>();
+        var playerInfo = new PlayerBaseInfo();
+        playerInfo.steamName = SteamFriends.GetFriendPersonaName(new CSteamID(argMUlSteamIDUserChanged));
+        playerInfo.streamId = argMUlSteamIDUserChanged;
+        card.Init(playerInfo);
+        _PlayerCards.Add(playerInfo.streamId, card);
+    }
+
+    private void OnLobbyDataUpdate(LobbyDataUpdate_t dataUpdated)
+    {
+        if (dataUpdated.m_ulSteamIDLobby == dataUpdated.m_ulSteamIDMember)
+        {
+            //It was lobby data that was updated
+        }
+        else
+        {
+            //It was this member that updated
+            var ready = SteamMatchmaking.GetLobbyMemberData(new CSteamID(dataUpdated.m_ulSteamIDLobby),
+                new CSteamID(dataUpdated.m_ulSteamIDMember), "Ready");
+            if (bool.TryParse(ready, out bool result))
+            {
+                _PlayerCards[dataUpdated.m_ulSteamIDMember].SetReady(result);
+            }
+
+            CheckStartBtn();
+        }
+    }
+
+    private void CheckStartBtn()
+    {
+        _StartBtn.gameObject.SetActive(SL.Get<LobbyService>().IsOwner() &&
+                                       SL.Get<LobbyService>().IsAllMemberReady());
+    }
+
+
+    private void InitMember()
+    {
+        var lobby = new CSteamID(SL.Get<LobbyService>().CurrentLobbyID);
+        var count = SteamMatchmaking.GetNumLobbyMembers(lobby);
+        for (int i = 0; i < count; i++)
+        {
+            var member = SteamMatchmaking.GetLobbyMemberByIndex(lobby, i);
+            AddMember(SL.Get<LobbyService>().CurrentLobbyID, member.m_SteamID);
+        }
     }
 
     private void RequestStartGame()
@@ -51,15 +132,12 @@ public class LobbyPanel : UIPanel
         _backBtn.onClick.RemoveAllListeners();
         _StartBtn.onClick.RemoveAllListeners();
         _ReadyBtn.onClick.RemoveAllListeners();
+        LobbyDataUpdate.Unregister();
     }
 
     private void SetPlayerReady()
     {
-        if (_currentPlayer != null)
-        {
-            // var player = NetworkManager.Singleton.LocalClient.PlayerObject.GetComponent<NetPlayer>();
-            // player.RequestSetMemberIsReadyServerRpc(NetworkManager.Singleton.LocalClientId, !_currentPlayer.ready);
-        }
+        SteamMatchmaking.SetLobbyMemberData(new CSteamID(SL.Get<LobbyService>().CurrentLobbyID), "Ready", "true");
     }
 
     private void OnBackBtnClick()
