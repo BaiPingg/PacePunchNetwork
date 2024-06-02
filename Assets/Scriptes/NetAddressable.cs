@@ -11,15 +11,8 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class NetAddressable : NetworkBehaviour
+public class NetAddressable : NetworkBehaviour, IService
 {
-    public static NetAddressable instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     /// <summary>
     /// Reference to your NetworkManager.
     /// </summary>

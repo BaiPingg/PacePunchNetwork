@@ -257,7 +257,7 @@ Canvas:
   m_GameObject: {fileID: 216023884}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 878858853}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -268,7 +268,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -120895955
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1001 &463362439
@@ -650,6 +650,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1226854952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226854953}
+  - component: {fileID: 1226854954}
+  m_Layer: 0
+  m_Name: TimeService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226854953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226854952}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1423241408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226854954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226854952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aad86f36249777439e54d5917693c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423241406
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +740,7 @@ Transform:
   - {fileID: 1663537475}
   - {fileID: 1872202413}
   - {fileID: 59778544}
+  - {fileID: 1226854953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1524631526 stripped
@@ -819,7 +864,7 @@ GameObject:
   - component: {fileID: 2063925359}
   - component: {fileID: 2063925358}
   m_Layer: 0
-  m_Name: SteamServide
+  m_Name: SteamService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -913,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211a9f6ec51ddc14f908f5acc0cd0423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 5753905259720817555, guid: d0c1c4975fdf08a499f5b9237d777ec6,
+  _playerPrefab: {fileID: 4706210444798807691, guid: 0620d3b8508514648b2715b091f9d3aa,
     type: 3}
   _addToDefaultScene: 1
   Spawns: []

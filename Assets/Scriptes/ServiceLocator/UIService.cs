@@ -11,19 +11,20 @@ public class UIService : MonoBehaviour, IService
     public Stack<UIPanel> openedPanels = new Stack<UIPanel>();
 
     public UIPanel startPanel;
+
     public UIPanel Current
     {
         get => openedPanels.Peek();
     }
 
-    
 
     public UIPanel OpenPanel(UIPanel panel)
     {
-        if (startPanel!=null)
+        if (startPanel != null)
         {
-          Destroy(startPanel);
+            Destroy(startPanel.gameObject);
         }
+
         UIPanel prePanel;
         openedPanels.TryPeek(out prePanel);
         if (prePanel)
@@ -57,7 +58,7 @@ public class UIService : MonoBehaviour, IService
 
     public void CloseAllPanel()
     {
-        while (openedPanels.Peek() != null)
+        while (openedPanels.TryPeek(out UIPanel pp))
         {
             ClosePanel();
         }

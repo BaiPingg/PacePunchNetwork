@@ -111,18 +111,8 @@ public class LobbyPanel : UIPanel
 
     private void RequestStartGame()
     {
-        bool allReady = true;
-        foreach (var player in _PlayerCards)
-        {
-            if (player.Value.ready == false)
-            {
-                allReady = false;
-            }
-        }
-
-        if (allReady)
-        {
-        }
+        var loading = new LoadingGameState();
+        SL.Get<ProcedureService>().SwitchState(loading);
     }
 
 
