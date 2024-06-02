@@ -11,6 +11,7 @@ public class SLRoot : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        SL.Register<TimeService>(FindObjectOfType<TimeService>());
         SL.Register<SteamService>(FindObjectOfType<SteamService>());
         SL.Register<LobbyService>(FindObjectOfType<LobbyService>());
         SL.Register<ProcedureService>(FindObjectOfType<ProcedureService>());

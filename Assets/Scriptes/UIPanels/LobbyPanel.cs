@@ -137,7 +137,13 @@ public class LobbyPanel : UIPanel
 
     private void SetPlayerReady()
     {
-        SteamMatchmaking.SetLobbyMemberData(new CSteamID(SL.Get<LobbyService>().CurrentLobbyID), "Ready", "true");
+        var ready = SteamMatchmaking.GetLobbyMemberData(new CSteamID(SL.Get<LobbyService>().CurrentLobbyID),
+            SteamUser.GetSteamID(), "Ready");
+        if (bool.TryParse(ready, out bool result))
+        {
+            SteamMatchmaking.SetLobbyMemberData(new CSteamID(SL.Get<LobbyService>().CurrentLobbyID), "Ready",
+                (!result).ToString());
+        }
     }
 
     private void OnBackBtnClick()

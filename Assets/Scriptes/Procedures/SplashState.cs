@@ -8,29 +8,17 @@ public class SplashState : ProcedureStateBase
 {
     public override void Enter()
     {
-        Debug.Log($"[{GetType().Name}]: SplashState enter");
-#if UNITY_EDITOR
-        _stateMachine.StartCoroutine(PlaySplash());
-#endif
+        Debug.Log($"[{GetType().Name}]:  enter");
+
         Addressables.InstantiateAsync(nameof(MainMenuPanel)).Completed += handle =>
         {
-            SL.Get<UIService>().OpenPanel(handle.Result.GetComponent<UIPanel>());
+            var state= new MainMenuState(_stateMachine);
+            state.uiPanel = handle.Result.GetComponent<UIPanel>();
+            _stateMachine.SwitchState(state);
+           
         };
     }
 
-
-    IEnumerator PlaySplash()
-    {
-        Debug.Log($"[{GetType().Name}]:Showing splash screen");
-        SplashScreen.Begin();
-        while (!SplashScreen.isFinished)
-        {
-            SplashScreen.Draw();
-            yield return null;
-        }
-
-        Debug.Log($"[{GetType().Name}]:Finished showing splash screen");
-    }
 
     public override void Tick(float deltaTime)
     {
