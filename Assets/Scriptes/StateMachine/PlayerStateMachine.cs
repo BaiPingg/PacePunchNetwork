@@ -2,6 +2,7 @@
 using Cinemachine;
 using FishNet;
 using FishNet.Object;
+
 using UnityEngine;
 
 public class PlayerStateMachine : NetworkBehaviour

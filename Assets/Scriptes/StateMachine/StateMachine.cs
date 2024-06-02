@@ -1,9 +1,9 @@
 ﻿using FishNet.Object;
 using UnityEngine;
 
-public abstract class StateMachine : NetworkBehaviour
+public abstract class StateMachine : MonoBehaviour
 {
-    private State _currentState;
+    protected State _currentState;
 
     public void SwitchState(State state)
     {

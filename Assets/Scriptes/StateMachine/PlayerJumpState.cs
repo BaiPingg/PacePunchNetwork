@@ -11,6 +11,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
+       
         stateMachine.velocity = new Vector3(stateMachine.velocity.x, stateMachine.jumpForce, stateMachine.velocity.z);
 
         stateMachine.animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
@@ -18,6 +19,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        
         ApplyGravity();
 
         if (stateMachine.velocity.y <= 0f)
@@ -31,5 +33,6 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Exit()
     {
+       
     }
 }

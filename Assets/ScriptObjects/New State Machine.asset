@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5308246019539660294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248a74bd55c629a458261d2d8fe3a225, type: 3}
+  m_Name: EntryState
+  m_EditorClassIdentifier: 
+  uniqueID: ca231c95-2a20-48aa-9199-b9abff502dc9
+  title: Entry
+  position: {x: 221, y: -17}
+  transitions:
+  - rootStateID: ca231c95-2a20-48aa-9199-b9abff502dc9
+    trueStateID: 4bcec475-82b9-4cfc-8bb6-edd2d9423f82
+    condition:
+      and: []
+--- !u!114 &-4296888067387060498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c41c226ac830cc4badff91167841243, type: 3}
+  m_Name: ActionState
+  m_EditorClassIdentifier: 
+  uniqueID: 4bcec475-82b9-4cfc-8bb6-edd2d9423f82
+  title: New State
+  position: {x: 507, y: -114}
+  transitions:
+  - rootStateID: 4bcec475-82b9-4cfc-8bb6-edd2d9423f82
+    trueStateID: 6c4457ab-5f5b-4144-8233-68eb23b3b941
+    condition:
+      and: []
+  onEnterActions: []
+  onTickActions: []
+  onExitActions: []
+--- !u!114 &-2346286104092411251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c41c226ac830cc4badff91167841243, type: 3}
+  m_Name: ActionState
+  m_EditorClassIdentifier: 
+  uniqueID: 6c4457ab-5f5b-4144-8233-68eb23b3b941
+  title: New State
+  position: {x: 758, y: 9}
+  transitions: []
+  onEnterActions: []
+  onTickActions: []
+  onExitActions: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedaed16a35737344b2389cf12928266, type: 3}
+  m_Name: New State Machine
+  m_EditorClassIdentifier: 
+  entryState: {fileID: -5308246019539660294}
+  anyState: {fileID: 5085005856226405239}
+  states:
+  - {fileID: -5308246019539660294}
+  - {fileID: 5085005856226405239}
+  - {fileID: -2346286104092411251}
+  - {fileID: -4296888067387060498}
+  - {fileID: 7976656839535901655}
+--- !u!114 &5085005856226405239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ddedce7bbba8c408e2c6e1570cd3d5, type: 3}
+  m_Name: AnyState
+  m_EditorClassIdentifier: 
+  uniqueID: ea4b215f-6d9b-4edf-8265-610da64b08e0
+  title: Any
+  position: {x: 199, y: 95}
+  transitions: []
+--- !u!114 &7976656839535901655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c41c226ac830cc4badff91167841243, type: 3}
+  m_Name: ActionState
+  m_EditorClassIdentifier: 
+  uniqueID: 82f7e48e-6e9d-4a89-ae0c-1defe8721859
+  title: New State
+  position: {x: 515, y: 103}
+  transitions: []
+  onEnterActions: []
+  onTickActions: []
+  onExitActions: []

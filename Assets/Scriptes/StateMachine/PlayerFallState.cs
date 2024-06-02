@@ -11,13 +11,16 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Enter()
     {
+       
         stateMachine.velocity.y = 0f;
 
         stateMachine.animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }
 
-    public override void Tick(float deltaTime)
+
+    public override void Tick(float deltaTim)
     {
+       
         ApplyGravity();
         Move();
 
@@ -29,5 +32,6 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Exit()
     {
+      
     }
 }

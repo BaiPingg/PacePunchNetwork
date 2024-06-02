@@ -9,14 +9,16 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Enter()
     {
+       
         stateMachine.velocity.y = Physics.gravity.y;
         stateMachine.animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
         stateMachine.inputReader.OnJumpPerformed += SwitchToJumpState;
     }
 
 
-    public override void Tick(float deltaTime)
+    public override void Tick(float deltatime)
     {
+       
         if (!stateMachine.controller.isGrounded)
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
@@ -30,15 +32,17 @@ public class PlayerMoveState : PlayerBaseState
             stateMachine.inputReader.MoveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
     }
 
+    public override void Exit()
+    {
+      
+        stateMachine.inputReader.OnJumpPerformed -= SwitchToJumpState;
+    }
+
     private void SwitchToJumpState()
     {
         stateMachine.SwitchState(new PlayerJumpState(stateMachine));
     }
 
-    public override void Exit()
-    {
-        stateMachine.inputReader.OnJumpPerformed -= SwitchToJumpState;
-    }
 
     public PlayerMoveState(PlayerStateMachine stateMachine) : base(stateMachine)
     {

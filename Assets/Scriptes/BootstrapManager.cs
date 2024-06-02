@@ -16,7 +16,7 @@ public class BootstrapManager : MonoBehaviour
     protected Callback<LobbyCreated_t> LobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> JoinRequest;
     protected Callback<LobbyEnter_t> LobbyEntered;
-
+   
     public static ulong CurrentLobbyID;
 
     private void Start()
