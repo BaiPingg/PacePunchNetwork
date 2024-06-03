@@ -33,5 +33,6 @@ public class SLRoot : MonoBehaviour
     private void OnSpawn(NetworkObject obj)
     {
         SL.Register<NetAddressable>(FindObjectOfType<NetAddressable>());
+        SL.Register<CampService>(FindObjectOfType<CampService>());
     }
 }

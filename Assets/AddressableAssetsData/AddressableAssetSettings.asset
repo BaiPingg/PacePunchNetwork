@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: ba135c5c6ed8c814887f652467e4f960
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: ee204a60fd7151f51c7cf824290dc40a
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
     - MainMenuPanel
     - LobbyListsPanel
     - LobbyPanel
+    - LoadingPanel
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 2b7766249ec8fd24e9dbb583f66e169e, type: 2}

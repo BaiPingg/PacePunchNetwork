@@ -43,6 +43,13 @@ MonoBehaviour:
     - LobbyPanel
     - UIPanels
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 163747f8db7de9a46b1f134fcd4d48dc
+    m_Address: Assets/Prefabs/UIPanels/LoadingPanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UIPanels
+    - LoadingPanel
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4efa93c9c550df2459024ba74d7e5a60, type: 2}
   m_SchemaSet:

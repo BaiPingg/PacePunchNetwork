@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Steamworks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class LobbyPanel : UIPanel
@@ -111,8 +112,14 @@ public class LobbyPanel : UIPanel
 
     private void RequestStartGame()
     {
-        var loading = new LoadingGameState();
-        SL.Get<ProcedureService>().SwitchState(loading);
+        Addressables.InstantiateAsync(nameof(LoadingPanel)).Completed += handle =>
+        {
+            var loading = new LoadingGameState();
+            loading.uiPanel = handle.Result.GetComponent<UIPanel>();
+            SL.Get<ProcedureService>().SwitchState(loading);
+           
+        };
+      
     }
 
 
