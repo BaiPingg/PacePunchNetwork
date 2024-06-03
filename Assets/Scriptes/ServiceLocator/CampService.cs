@@ -20,9 +20,17 @@ public class CampService : NetworkBehaviour, IService
     public void InitializeTheCamp()
     {
         var camps = FindObjectsOfType<CampService>();
-        foreach (var ca in camps)
+        int targetid = Random.Range(0, camps.Length - 1);
+        for (int i = 0; i < camps.Length; i++)
         {
-            ca.CurrentCamp.Value = Random.Range(1, 2);
+            if (targetid == i)
+            {
+                camps[i].CurrentCamp.Value = 2;
+            }
+            else
+            {
+                camps[i].CurrentCamp.Value = 1;
+            }
         }
     }
 
@@ -39,6 +47,9 @@ public class CampService : NetworkBehaviour, IService
 
     private void OnCampSideChange(int prev, int next, bool asserver)
     {
-        Debug.Log("camp is ：" + next);
+        if (IsOwner)
+        {
+            Debug.Log("camp is ：" + next);
+        }
     }
 }
