@@ -15,6 +15,12 @@ public class NetProcedureService : NetworkBehaviour, IService
     [ServerRpc]
     public void ChangeToLoading()
     {
+        ChangeToLoadingClient();
+    }
+
+    [ObserversRpc]
+    public void ChangeToLoadingClient()
+    {
         var loading = new LoadingGameState();
         SL.Get<ProcedureService>().SwitchState(loading);
     }
