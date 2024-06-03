@@ -112,13 +112,8 @@ public class LobbyPanel : UIPanel
 
     private void RequestStartGame()
     {
-        Addressables.InstantiateAsync(nameof(LoadingPanel)).Completed += handle =>
-        {
-            var loading = new LoadingGameState();
-            loading.uiPanel = handle.Result.GetComponent<UIPanel>();
-            SL.Get<ProcedureService>().SwitchState(loading);
-           
-        };
+      
+        SL.Get<NetProcedureService>().ChangeToLoading();
       
     }
 
